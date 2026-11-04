@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="东莞泓创自动化设备有限公司">
 <meta property="og:title" content="新程启航 · 泓创自动化答谢晚宴">
 <meta property="og:description" content="11月13日17:00，东莞桥头。从纤维到成型，从设备到生产，诚邀共叙新程。">
-<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=7">
+<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=8">
 <meta property="og:image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta itemprop="image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta name="thumbnail" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <link rel="image_src" href="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
-<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=7">
+<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=8">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -505,13 +505,13 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
     <p class="footer-slogan">从纤维到成型，从设备到生产。</p>
     <p class="footer-name">东莞泓创自动化设备有限公司</p>
     <p class="footer-address">广东省东莞市桥头镇李屋沿河路120号104室</p>
-    <a class="footer-phone" href="tel:13712375090"><span>联系电话</span><b>137 1237 5090</b><span>周家齐先生</span></a>
+    <a class="footer-phone" id="footerPhoneLink" href="tel:13712375090"><span>联系电话</span><b id="footerPhoneNumber">137 1237 5090</b><span id="footerContactName">周家齐先生</span></a>
   </footer>
 </main>
 
 <nav class="dock" id="dock" aria-label="快捷操作">
   <button type="button" id="dockMap"><span class="dock-icon"><svg viewBox="0 0 24 24"><path d="m4 6 5-2 6 2 5-2v14l-5 2-6-2-5 2Z"/><path d="M9 4v14M15 6v14"/></svg></span><span class="dock-label">导航</span><b>高德地图</b></button>
-  <a href="tel:13712375090"><span class="dock-icon"><svg viewBox="0 0 24 24"><path d="M8.2 4.5 6 4.8c-1 .2-1.6 1.1-1.4 2.1.8 6.3 5.8 11.3 12.1 12.1 1 .2 1.9-.4 2.1-1.4l.3-2.2-4.1-1.7-1.5 1.6a12.4 12.4 0 0 1-5.2-5.2l1.6-1.5Z"/></svg></span><span class="dock-label">电话</span><b>周家齐先生</b></a>
+  <a id="dockPhoneLink" href="tel:13712375090"><span class="dock-icon"><svg viewBox="0 0 24 24"><path d="M8.2 4.5 6 4.8c-1 .2-1.6 1.1-1.4 2.1.8 6.3 5.8 11.3 12.1 12.1 1 .2 1.9-.4 2.1-1.4l.3-2.2-4.1-1.7-1.5 1.6a12.4 12.4 0 0 1-5.2-5.2l1.6-1.5Z"/></svg></span><span class="dock-label">电话</span><b id="dockContactName">周家齐先生</b></a>
   <button type="button" id="dockRsvp"><span class="dock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="m8 9 1.5 1.5L12 8M8 15l1.5 1.5L12 14M14 10h3M14 16h3"/></svg></span><span class="dock-label">回执</span><b>确认出席</b></button>
   <button type="button" id="dockShare"><span class="dock-icon"><svg viewBox="0 0 24 24"><circle cx="17.5" cy="6" r="2.7"/><circle cx="6.5" cy="12" r="2.7"/><circle cx="17.5" cy="18" r="2.7"/><path d="M9 10.7 15 7.3M9 13.3l6 3.4"/></svg></span><span class="dock-label">分享</span><b>发送给好友</b></button>
 </nav>
@@ -529,10 +529,20 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 <script>
 (function(){
   'use strict';
+  var HOSTS={
+    zhou:{name:'周家齐',title:'先生',phone:'13712375090'},
+    guanzhengwen:{name:'官正文',title:'先生',phone:'18974272563'},
+    wensong:{name:'文嵩',title:'先生',phone:'13925580312'},
+    yanggaoming:{name:'杨高明',title:'先生',phone:'15363467086'}
+  };
+  var hostKey=new URLSearchParams(location.search).get('host')||'zhou';
+  var selectedHost=HOSTS[hostKey]||HOSTS.zhou;
   var DATA={
     address:'广东省东莞市桥头镇李屋沿河路120号104室',
     eventDate:new Date(2026,10,13,17,0,0),
-    phone:'13712375090',
+    phone:selectedHost.phone,
+    contactName:selectedHost.name,
+    contactTitle:selectedHost.title,
     rsvpApi:'https://forthcoming-iguana-d3c5t12d21c1f-1503648612.ap-shanghai.app.tcloudbase.com/rsvp-api/api/rsvp'
   };
   var opening=document.getElementById('opening');
@@ -542,6 +552,20 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
   var toastEl=document.getElementById('toast');
   var toastTimer=null;
   var attending='yes';
+
+  function displayPhone(phone){
+    return phone.length===11?phone.slice(0,3)+' '+phone.slice(3,7)+' '+phone.slice(7):phone;
+  }
+  function applyHost(){
+    var contact=DATA.contactName+DATA.contactTitle;
+    var phoneText=displayPhone(DATA.phone);
+    var tel='tel:'+DATA.phone.replace(/[^\d+]/g,'');
+    document.getElementById('footerPhoneLink').href=tel;
+    document.getElementById('dockPhoneLink').href=tel;
+    document.getElementById('footerPhoneNumber').textContent=phoneText;
+    document.getElementById('footerContactName').textContent=contact;
+    document.getElementById('dockContactName').textContent=contact;
+  }
 
   function getRsvpClientId(){
     var storageKey='hc_rsvp_client_id_v1';
@@ -739,6 +763,8 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
           attending:attending,
           guestCount:count,
           note:note==='无'?'':note,
+          inviterName:DATA.contactName,
+          inviterPhone:DATA.phone,
           consent:true
         })
       });
@@ -790,6 +816,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
   }
 
   window.addEventListener('scroll',updateProgress,{passive:true});
+  applyHost();
   setInterval(updateCountdown,1000);
   updateCountdown();
   updateProgress();
