@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="theme-color" content="#5A0710">
+<title>泓创自动化 · 新厂启用答谢晚宴邀请函</title>
+<meta name="description" content="2026年11月13日17:00，东莞桥头。泓创自动化新厂启用答谢晚宴，诚邀拨冗莅临。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="新程启航 · 泓创自动化答谢晚宴">
+<meta property="og:description" content="11月13日17:00，东莞桥头。从纤维到成型，从设备到生产，诚邀共叙新程。">
+<meta property="og:image" content="./assets/share-cover.jpg">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --wine-0:#290307;
+  --wine-1:#4A060D;
+  --wine-2:#720A14;
+  --wine-3:#A81320;
+  --red:#D72B32;
+  --gold-0:#7E5A28;
+  --gold-1:#B68841;
+  --gold-2:#D7B569;
+  --gold-3:#F2DDA7;
+  --paper:#F5EBDD;
+  --paper-2:#EBDAC0;
+  --ink:#21191A;
+  --muted:#765F54;
+  --line:rgba(182,136,65,.38);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;
+  --kai:"Kaiti SC","STKaiti","KaiTi","Songti SC",serif;
+  --sans:"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans CJK SC","Arial",sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;background:#12090A}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:#12090A;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{border:0;background:none;color:inherit}
+.opening{
+  position:fixed;inset:0;z-index:100;overflow:hidden;color:var(--gold-3);cursor:pointer;
+  display:grid;place-items:center;padding:26px;
+  background:
+    radial-gradient(90% 72% at 50% 18%,rgba(187,30,39,.5),transparent 58%),
+    radial-gradient(80% 60% at 50% 108%,rgba(0,0,0,.72),transparent 70%),
+    linear-gradient(145deg,#8B0E18 0%,#55070D 48%,#230306 100%);
+  transition:opacity .65s ease,transform 1.05s var(--ease);
+}
+.opening::before{
+  content:"";position:absolute;inset:-20%;
+  background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px),
+    repeating-linear-gradient(-45deg,rgba(255,255,255,.02) 0 1px,transparent 1px 7px);
+  transform:rotate(.01deg);animation:weave 22s linear infinite;
+}
+.opening::after{
+  content:"";position:absolute;inset:13px;border:1px solid rgba(231,190,107,.34);
+  box-shadow:inset 0 0 0 5px rgba(255,255,255,.018);
+}
+@keyframes weave{to{transform:translate3d(56px,56px,0)}}
+.open-stage{position:relative;z-index:2;width:min(100%,440px);text-align:center}
+.open-kicker{font-size:9px;letter-spacing:.52em;text-indent:.52em;color:rgba(242,221,167,.56);margin:0 0 24px}
+.open-seal{
+  position:relative;width:68px;height:68px;margin:0 auto 22px;display:grid;place-items:center;
+  color:var(--wine-2);font-family:var(--kai);font-size:21px;letter-spacing:.02em;
+  background:linear-gradient(145deg,#FFF2CC,#C99B49);
+  box-shadow:0 12px 28px rgba(0,0,0,.32),inset 0 0 0 1px rgba(255,255,255,.64);
+  transform:rotate(-3deg)
+}
+.open-seal::before{content:"";position:absolute;inset:5px;border:1px solid rgba(111,20,25,.44)}
+.open-company{font-size:13px;letter-spacing:.16em;color:rgba(255,242,213,.82);margin:0 0 9px}
+.open-en{font-size:8px;letter-spacing:.17em;color:rgba(255,242,213,.38);margin:0 0 30px}
+.open-title{
+  margin:0;font-family:var(--serif);font-size:clamp(44px,13vw,58px);line-height:1.18;
+  letter-spacing:.26em;text-indent:.26em;font-weight:400;
+  background:linear-gradient(100deg,#F8E8B9,#D7AF61 42%,#FFF3CB 57%,#BA8740);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:gold 6s linear infinite;
+}
+@keyframes gold{to{background-position:220% 0}}
+.open-sub{margin:15px 0 0;font-family:var(--kai);font-size:14px;letter-spacing:.26em;text-indent:.26em;color:#F2DDA7}
+.open-date{margin-top:31px;font-size:11px;letter-spacing:.16em;color:rgba(255,242,213,.7)}
+.open-date b{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:.08em;color:#FFF0C5;margin-right:12px}
+.invite-envelope{
+  position:relative;width:min(58vw,218px);height:132px;margin:24px auto 0;
+  perspective:700px;filter:drop-shadow(0 17px 25px rgba(0,0,0,.28));
+}
+.env-sheet{
+  position:absolute;left:7%;right:7%;top:10%;height:88%;z-index:1;
+  display:grid;place-items:center;color:var(--wine-2);font-family:var(--kai);font-size:12px;letter-spacing:.24em;
+  background:linear-gradient(180deg,#FFF8E9,#E9D2A6);border:1px solid rgba(255,255,255,.55);
+  transition:transform .8s var(--ease) .18s
+}
+.env-body{
+  position:absolute;inset:0;z-index:2;border-radius:2px;
+  background:
+    linear-gradient(35deg,transparent 48.7%,rgba(109,49,32,.25) 49%,transparent 49.3%),
+    linear-gradient(-35deg,transparent 48.7%,rgba(109,49,32,.25) 49%,transparent 49.3%),
+    linear-gradient(155deg,#EFDDBC,#D8B989);
+  box-shadow:inset 0 0 0 1px rgba(92,48,29,.28)
+}
+.env-flap{
+  position:absolute;inset:0 0 auto;height:58%;z-index:3;transform-origin:top;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  background:linear-gradient(180deg,#FFF6E4,#DFC49A);
+  transition:transform .65s var(--ease)
+}
+.env-wax{
+  position:absolute;left:50%;top:53%;z-index:4;width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;transform:translate(-50%,-50%) rotate(-3deg);
+  color:#FFE8BE;font-family:var(--kai);font-size:17px;
+  background:radial-gradient(circle at 34% 28%,#D53737,#9E1019 55%,#70080D);
+  box-shadow:0 5px 12px rgba(42,2,5,.34),inset 0 0 0 1px rgba(255,231,192,.45);
+  transition:transform .45s ease,opacity .35s
+}
+.env-wax::before{content:"";position:absolute;inset:5px;border:1px dashed rgba(255,233,199,.45);border-radius:50%}
+.opening.animating .env-flap{transform:rotateX(-165deg)}
+.opening.animating .env-sheet{transform:translateY(-48px)}
+.opening.animating .env-wax{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(18deg)}
+.open-action{
+  position:relative;display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:13px 25px;
+  color:#FFF0C9;font-size:12px;letter-spacing:.22em;transition:transform .25s,background .25s;
+}
+.open-action::before{
+  content:"";position:absolute;inset:0;border:1px solid rgba(231,190,107,.55);
+  background:linear-gradient(180deg,rgba(255,240,200,.05),rgba(255,240,200,.015));
+}
+.open-action::after{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-2))}
+.open-action:active{transform:scale(.97)}
+.opening.leaving{opacity:0;transform:translateY(-5%) scale(1.015);pointer-events:none}
+body.invite-open .opening{pointer-events:none}
+.main{position:relative;max-width:720px;margin:0 auto;overflow:hidden;opacity:0;background:var(--paper);transition:opacity .8s ease}
+body.invite-open .main{opacity:1}
+.main::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E")}
+.progress{position:fixed;z-index:55;top:0;left:0;width:100%;height:2px;background:transparent}
+.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--red),var(--gold-2),var(--red))}
+.hero{
+  position:relative;min-height:100svh;padding:calc(46px + env(safe-area-inset-top)) 30px calc(45px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;justify-content:space-between;color:var(--gold-3);
+  background:
+    radial-gradient(90% 48% at 88% 10%,rgba(242,221,167,.13),transparent 58%),
+    linear-gradient(146deg,#9E101B 0%,#6A0912 46%,#360408 100%);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(115deg,transparent 0 57%,rgba(242,221,167,.08) 57.15%,transparent 57.3%),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.022) 0 1px,transparent 1px 8px);
+  pointer-events:none;
+}
+.hero::after{content:"";position:absolute;width:235px;height:235px;right:-94px;top:80px;border:1px solid rgba(242,221,167,.2);border-radius:50%;box-shadow:0 0 0 34px rgba(242,221,167,.025),0 0 0 68px rgba(242,221,167,.018)}
+.pointer-glow{
+  position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(210px at var(--mx,70%) var(--my,35%),rgba(255,239,190,.16),transparent 68%);
+}
+.hero.is-pointing .pointer-glow{opacity:1}
+.hero-top,.hero-copy,.hero-meta{position:relative;z-index:2}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.brand-mark{display:flex;align-items:center;gap:11px;font-size:12px;letter-spacing:.13em;color:rgba(255,242,213,.78)}
+.mini-seal{display:grid;place-items:center;width:34px;height:34px;border-radius:2px;color:var(--wine-2);font-family:var(--kai);font-size:10px;font-weight:700;background:linear-gradient(145deg,#FFF1CA,#C99A48);transform:rotate(-3deg)}
+.hero-index{font-size:8px;letter-spacing:.3em;color:rgba(255,242,213,.42);writing-mode:vertical-rl}
+.hero-copy{margin-top:12vh}
+.eyebrow{margin:0 0 20px;font-size:9px;letter-spacing:.46em;text-indent:.46em;color:rgba(255,242,213,.56)}
+.hero h1{margin:0;font-family:var(--serif);font-size:clamp(48px,14vw,68px);line-height:1.18;font-weight:400;letter-spacing:.1em}
+.hero h1 span{display:block}
+.hero h1 .gold{
+  background:linear-gradient(100deg,#F8E8B9,#D7AF61 40%,#FFF6D6 54%,#C08C42);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:gold 7s linear infinite;
+}
+.hero-lead{max-width:430px;margin:26px 0 0;font-family:var(--kai);font-size:15px;line-height:1.95;letter-spacing:.1em;color:rgba(255,242,213,.78)}
+.hero-meta{margin-top:30px;border-top:1px solid rgba(242,221,167,.22);padding-top:22px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end}
+.hero-date{font-family:var(--serif);font-size:15px;letter-spacing:.1em;color:#FFF0C5}
+.hero-date b{display:block;font-size:30px;font-weight:400;margin-bottom:5px;letter-spacing:.05em}
+.hero-time{text-align:right}
+.hero-time strong{display:block;font-family:var(--serif);font-size:34px;font-weight:400;line-height:1;color:#F3D793}
+.hero-time small{display:block;margin-top:7px;font-size:10px;letter-spacing:.2em;color:rgba(255,242,213,.58)}
+.scroll-down{grid-column:1/-1;display:flex;align-items:center;gap:9px;margin-top:4px;padding:0;font-size:9px;letter-spacing:.2em;color:rgba(255,242,213,.45)}
+.scroll-down i{width:28px;height:1px;background:linear-gradient(90deg,var(--gold-2),transparent)}
+.section{position:relative;padding:70px 28px}
+.section-head{margin-bottom:28px}
+.section-no{display:block;font-size:9px;letter-spacing:.32em;color:var(--gold-0);margin-bottom:10px}
+.section-title{margin:0;font-family:var(--serif);font-size:clamp(27px,8vw,36px);line-height:1.35;font-weight:400;letter-spacing:.1em;color:var(--wine-2)}
+.section-desc{margin:13px 0 0;font-size:12.5px;line-height:1.9;color:var(--muted)}
+.craft{background:linear-gradient(180deg,#F8F0E4,#F0E2CD)}
+.craft-panel{position:relative;padding:26px 21px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.48);box-shadow:0 18px 42px rgba(74,17,15,.08)}
+.craft-panel::after{content:"";position:absolute;right:-50px;bottom:-90px;width:220px;height:220px;border:1px solid rgba(168,19,32,.12);border-radius:50%;box-shadow:0 0 0 26px rgba(168,19,32,.025)}
+.craft-line{font-family:var(--serif);font-size:22px;line-height:1.65;letter-spacing:.05em;color:var(--wine-2)}
+.craft-copy{margin:15px 0 0;font-size:14px;line-height:2;color:#4A3A34;text-align:justify}
+.process{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.process::before{content:"";position:absolute;left:10%;right:10%;top:18px;height:1px;background:linear-gradient(90deg,rgba(168,19,32,.12),rgba(168,19,32,.5),rgba(168,19,32,.12))}
+.process-item{position:relative;text-align:center;cursor:pointer;padding:0;transition:transform .2s}
+.process-item:active{transform:scale(.96)}
+.process-dot{position:relative;z-index:2;margin:0 auto 11px;width:37px;height:37px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:12px;color:#FCEAC0;background:linear-gradient(145deg,var(--red),var(--wine-1));box-shadow:0 7px 18px rgba(90,7,16,.2);transition:transform .28s,box-shadow .28s}
+.process-item.active .process-dot{transform:translateY(-3px);box-shadow:0 10px 25px rgba(90,7,16,.3),0 0 0 5px rgba(168,19,32,.08)}
+.process-item b{display:block;font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink)}
+.process-item small{display:block;margin-top:4px;font-size:9.5px;color:var(--muted);line-height:1.5}
+.process-detail{
+  position:relative;z-index:2;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;
+  margin-top:22px;padding:16px;background:rgba(114,10,20,.055);border-top:1px solid rgba(168,19,32,.16);
+}
+.process-detail-no{font-family:var(--serif);font-size:23px;line-height:1;color:rgba(168,19,32,.35)}
+.process-detail strong{display:block;font-size:13px;font-weight:500;letter-spacing:.05em;color:var(--wine-2);margin-bottom:4px}
+.process-detail p{margin:0;font-size:12px;line-height:1.8;color:var(--muted)}
+.process-detail.swap{animation:detailIn .35s var(--ease)}
+@keyframes detailIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.event{background:var(--paper)}
+.event-card{position:relative;padding:30px 22px 24px;color:var(--gold-3);background:linear-gradient(155deg,var(--wine-2),var(--wine-1) 62%,var(--wine-0));overflow:hidden}
+.event-card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(242,221,167,.2);pointer-events:none}
+.event-card::after{content:"";position:absolute;right:-76px;top:-88px;width:240px;height:240px;border:1px solid rgba(242,221,167,.15);border-radius:50%}
+.event-date{position:relative;z-index:1;display:flex;align-items:baseline;gap:9px;font-family:var(--serif);font-size:29px;letter-spacing:.04em;color:#FFF0C5}
+.event-date small{font-size:11px;letter-spacing:.15em;color:rgba(255,242,213,.6)}
+.event-time{position:relative;z-index:1;margin:17px 0 6px;font-family:var(--serif);font-size:55px;line-height:1;letter-spacing:.03em;color:#F0CF86}
+.event-name{position:relative;z-index:1;margin:8px 0 25px;font-family:var(--kai);font-size:17px;letter-spacing:.16em;color:#FFF2D1}
+.countdown{position:relative;z-index:1;margin:0 0 22px;padding:12px 0;border-top:1px solid rgba(242,221,167,.18);border-bottom:1px solid rgba(242,221,167,.18);font-size:10px;letter-spacing:.08em;line-height:1.8;color:rgba(255,242,213,.68)}
+.countdown small{display:block;margin-bottom:5px;font-size:9px;letter-spacing:.22em;color:var(--gold-2)}
+.countdown b{font-family:var(--serif);font-size:18px;font-weight:400;color:#FFECC1}
+.countdown.tick b:last-of-type{animation:tick .28s ease}
+@keyframes tick{50%{color:#FFF8E3;transform:translateY(-2px)}}
+.event-address{position:relative;z-index:1;padding-top:18px;border-top:1px solid rgba(242,221,167,.2);font-size:12.5px;line-height:1.9;color:rgba(255,242,213,.72)}
+.event-address b{display:block;margin-bottom:4px;font-size:9px;font-weight:400;letter-spacing:.28em;color:var(--gold-2)}
+.actions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:19px}
+.action{display:flex;align-items:center;justify-content:center;gap:7px;min-height:42px;border:1px solid rgba(242,221,167,.32);font-size:11.5px;letter-spacing:.08em;color:#FFF1C9;transition:background .2s,transform .15s}
+.action:active{transform:scale(.98)}
+.action.primary{background:rgba(255,244,210,.09);border-color:rgba(242,221,167,.5)}
+.action.full{grid-column:1/-1}
+.invitation{background:linear-gradient(180deg,#F7EFE3,#EFE0C9)}
+.letter{padding:2px 5px}
+.letter p{margin:0 0 16px;font-family:var(--kai);font-size:16px;line-height:2.05;letter-spacing:.035em;color:#473631;text-align:justify;text-indent:2em}
+.letter .salute{font-size:17px;letter-spacing:.12em;color:var(--wine-2);text-indent:0}
+.letter .sign{text-align:right;text-indent:0;font-family:var(--serif);color:var(--wine-2)}
+.event-meta{margin-top:25px;padding:17px 19px;border-left:2px solid var(--wine-3);background:rgba(255,255,255,.52);font-size:13px;line-height:1.95;color:#4A3A34}
+.event-meta-title{margin:0 0 10px;color:var(--wine-2);font-weight:500}
+.note-item{border-top:1px solid rgba(168,19,32,.12)}
+.note-item summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;cursor:pointer;list-style:none;color:#493832;font-size:12.5px}
+.note-item summary::-webkit-details-marker{display:none}
+.note-item summary::after{content:"+";font-family:var(--serif);font-size:18px;color:var(--gold-0);transition:transform .25s}
+.note-item[open] summary::after{transform:rotate(45deg)}
+.note-item p{margin:0 0 12px;padding:0 3px 5px;font-size:12px;line-height:1.85;color:var(--muted)}
+.rsvp{background:var(--wine-0);color:var(--gold-3)}
+.rsvp .section-no{color:var(--gold-2)}
+.rsvp .section-title{color:#FFF1C9}
+.rsvp .section-desc{color:rgba(255,242,213,.56)}
+.rsvp-card{padding:23px 19px;border:1px solid rgba(242,221,167,.24);background:rgba(255,255,255,.035)}
+.choice-title{margin:0 0 10px;font-size:10px;letter-spacing:.2em;color:rgba(255,242,213,.54)}
+.choice-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.choice{height:43px;border:1px solid rgba(242,221,167,.28);color:rgba(255,242,213,.7);font-size:12px;transition:.2s}
+.choice.active{border-color:var(--gold-2);color:#FFECB8;background:rgba(215,181,105,.1)}
+.field{width:100%;height:44px;padding:0 13px;border:1px solid rgba(242,221,167,.25);border-radius:0;outline:none;color:#FFF0C5;background:rgba(255,255,255,.04);font-size:12.5px}
+.field::placeholder{color:rgba(255,242,213,.36)}
+.field:focus{border-color:rgba(215,181,105,.72);box-shadow:0 0 0 2px rgba(215,181,105,.08)}
+select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#D7B569 50%),linear-gradient(135deg,#D7B569 50%,transparent 50%);background-position:calc(100% - 14px) 19px,calc(100% - 9px) 19px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.field option{color:#21191A;background:#F5EBDD}
+.form-field{margin-top:10px}
+.count-row{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:8px;transition:opacity .2s}
+.count-chip{height:38px;border:1px solid rgba(242,221,167,.22);color:rgba(255,242,213,.54);font-size:11.5px;transition:.2s}
+.count-chip.active{border-color:var(--gold-2);background:rgba(215,181,105,.12);color:#FFECB8}
+.rsvp-card.declined .count-row,.rsvp-card.declined .guest-note{opacity:.38;pointer-events:none}
+.rsvp-copy{display:flex;align-items:center;justify-content:center;width:100%;height:48px;margin-top:10px;color:#4A060D;background:linear-gradient(135deg,#F6E3AF,#C89A48);font-size:12.5px;font-weight:600;letter-spacing:.12em}
+.rsvp-copy.copied{background:linear-gradient(135deg,#F9ECCA,#DFC085)}
+.rsvp-card.needs-name{animation:nudge .35s ease}
+@keyframes nudge{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-2px)}}
+.spark{position:fixed;z-index:130;width:5px;height:5px;border-radius:50%;pointer-events:none;background:var(--gold-2);box-shadow:0 0 8px rgba(242,221,167,.75);animation:sparkFly .75s ease-out forwards}
+@keyframes sparkFly{to{opacity:0;transform:translate(var(--sx),var(--sy)) scale(.25)}}
+.rsvp-note{margin:12px 0 0;font-size:10px;line-height:1.7;color:rgba(255,242,213,.38);text-align:center}
+.footer{padding:38px 28px calc(104px + env(safe-area-inset-bottom));color:rgba(255,242,213,.52);background:#1C0306;text-align:center}
+.footer-slogan{margin:0 0 18px;font-family:var(--serif);font-size:18px;line-height:1.7;letter-spacing:.12em;color:#E9CB8A}
+.footer-name{margin:0 0 6px;font-size:11px;letter-spacing:.12em}
+.footer-address{margin:0;font-size:10px;line-height:1.8}
+.dock{
+  position:fixed;z-index:45;left:50%;bottom:calc(13px + env(safe-area-inset-bottom));transform:translateX(-50%);
+  display:grid;grid-template-columns:repeat(4,1fr);width:min(calc(100% - 30px),560px);
+  border:1px solid rgba(242,221,167,.32);background:rgba(32,3,6,.92);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s
+}
+.dock.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dock button{height:55px;color:rgba(255,242,213,.8);font-size:10.5px;letter-spacing:.1em;border-right:1px solid rgba(242,221,167,.15)}
+.dock button:last-child{border-right:0}
+.dock button b{display:block;margin-top:3px;font-size:9px;font-weight:400;color:var(--gold-2)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.toast{
+  position:fixed;z-index:120;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));max-width:82vw;
+  padding:11px 17px;transform:translate(-50%,12px);opacity:0;pointer-events:none;
+  color:#FFF1CA;background:rgba(29,3,6,.95);border:1px solid rgba(242,221,167,.28);
+  font-size:11.5px;line-height:1.6;text-align:center;transition:.25s
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:24px;background:rgba(16,2,4,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:.25s}
+.modal.show{opacity:1;pointer-events:auto}
+.modal-card{width:min(100%,360px);padding:26px 21px 21px;background:linear-gradient(180deg,#FFFDF8,#F1E2CB);border:1px solid rgba(182,136,65,.48);text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.42)}
+.modal-card h2{margin:0 0 10px;font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:.12em;color:var(--wine-2)}
+.modal-card p{margin:0 0 18px;font-size:12.5px;line-height:1.9;color:#6E5A4F}
+.modal-card button{width:100%;height:44px;color:#FFF1CA;background:linear-gradient(135deg,var(--red),var(--wine-1));font-size:12px;letter-spacing:.12em}
+.modal-card button.secondary{margin-top:8px;color:var(--wine-2);background:rgba(255,255,255,.68);border:1px solid rgba(168,19,32,.24)}
+@media (min-width:760px){
+  body{background:radial-gradient(circle at 50% 0,#36060C,#0C0708 68%)}
+  .main{box-shadow:0 0 0 1px rgba(242,221,167,.08),0 36px 100px rgba(0,0,0,.58)}
+  .section{padding:88px 48px}
+  .hero{padding-left:48px;padding-right:48px}
+}
+@media (max-width:360px){
+  .section{padding-left:21px;padding-right:21px}
+  .hero{padding-left:23px;padding-right:23px}
+  .hero h1{font-size:43px}
+  .craft-line{font-size:19px}
+  .process{gap:7px}
+  .process-item b{font-size:11px}
+}
+@media (max-height:700px){
+  .open-kicker{margin-bottom:14px}
+  .open-seal{width:54px;height:54px;margin-bottom:14px;font-size:17px}
+  .open-en{margin-bottom:16px}
+  .open-title{font-size:42px}
+  .open-sub{margin-top:8px;font-size:12px}
+  .open-date{margin-top:17px}
+  .invite-envelope{width:178px;height:108px;margin-top:14px}
+  .open-action{margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<section class="opening" id="opening" aria-label="开启邀请函">
+  <div class="open-stage">
+    <p class="open-kicker">INVITATION · 2026</p>
+    <div class="open-seal" aria-hidden="true">泓创</div>
+    <p class="open-company">东莞泓创自动化设备有限公司</p>
+    <p class="open-en">DONGGUAN HONGCHUANG AUTOMATION EQUIPMENT CO., LTD.</p>
+    <h1 class="open-title">新程启航</h1>
+    <p class="open-sub">新厂启用 · 答谢晚宴</p>
+    <p class="open-date"><b>11.13</b>星期五 · 17:00</p>
+    <div class="invite-envelope" aria-hidden="true">
+      <div class="env-sheet">敬 请 光 临</div>
+      <div class="env-body"></div>
+      <div class="env-flap"></div>
+      <div class="env-wax">启</div>
+    </div>
+    <button class="open-action" id="openInvite" type="button">开启邀请</button>
+  </div>
+</section>
+
+<main class="main" id="main">
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="pointer-glow" id="pointerGlow" aria-hidden="true"></div>
+    <div class="hero-top">
+      <div class="brand-mark"><span class="mini-seal">泓创</span><span>东莞泓创自动化设备有限公司</span></div>
+      <span class="hero-index">INVITATION / 01</span>
+    </div>
+    <div class="hero-copy reveal">
+      <p class="eyebrow">CARBON FIBER FORMING · TURNKEY SERVICE</p>
+      <h1 id="heroTitle"><span>碳纤成器</span><span class="gold">泓启新程</span></h1>
+      <p class="hero-lead">从一根纤维，到一套成型设备；从设备到厂，到稳定生产。新厂启用之际，谨备薄酌，敬候光临。</p>
+    </div>
+    <div class="hero-meta reveal">
+      <div class="hero-date"><b>2026.11.13</b>星期五 · 东莞桥头</div>
+      <div class="hero-time"><strong>17:00</strong><small>答谢晚宴</small></div>
+      <button class="scroll-down" id="scrollDetail" type="button" aria-controls="craft"><i></i>向下浏览</button>
+    </div>
+  </section>
+
+  <section class="section craft" id="craft">
+    <div class="section-head reveal">
+      <span class="section-no">01 / OUR CRAFT</span>
+      <h2 class="section-title">专业，从一根纤维开始</h2>
+      <p class="section-desc">以成型设备为核心，以周边配套与生产服务为延伸。</p>
+    </div>
+    <div class="craft-panel reveal">
+      <p class="craft-line">碳纤维成型设备<br>周边配套设备 · 整线解决方案</p>
+      <p class="craft-copy">泓创自动化专注于碳纤维成型设备，并提供周边配套设备与整线解决方案。从设备到厂、安装调试，到试产导入与生产现场指导，我们以贯穿全流程的一站式服务，陪伴客户稳定投产。</p>
+      <div class="process" aria-label="服务流程">
+        <button class="process-item active" type="button" data-step="0" aria-pressed="true"><span class="process-dot">01</span><b>设备到厂</b><small>规划与交付</small></button>
+        <button class="process-item" type="button" data-step="1" aria-pressed="false"><span class="process-dot">02</span><b>安装调试</b><small>试产与导入</small></button>
+        <button class="process-item" type="button" data-step="2" aria-pressed="false"><span class="process-dot">03</span><b>生产指导</b><small>稳定量产</small></button>
+      </div>
+      <div class="process-detail" id="processDetail" aria-live="polite">
+        <span class="process-detail-no">01</span>
+        <div><strong>设备到厂</strong><p>结合产品与工艺需求，完成设备配置、交付协同与现场落位，为后续安装调试做好准备。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section event" id="event">
+    <div class="section-head reveal">
+      <span class="section-no">02 / THE DINNER</span>
+      <h2 class="section-title">新厂启用答谢晚宴</h2>
+      <p class="section-desc">谨以一场晚宴，感谢一路同行。</p>
+    </div>
+    <div class="event-card reveal">
+      <div class="event-date"><span>11.13</span><small>2026 / 星期五</small></div>
+      <div class="event-time">17:00</div>
+      <p class="event-name">晚宴开始 · 敬请提前到场</p>
+      <div class="countdown" id="countdown" role="timer" aria-live="polite"></div>
+      <div class="event-address"><b>VENUE · 地点</b>广东省东莞市桥头镇李屋沿河路120号104室</div>
+      <div class="actions">
+        <a class="action primary" id="mapAmap" href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%B8%9C%E8%8E%9E%E5%B8%82%E6%A1%A5%E5%A4%B4%E9%95%87%E6%9D%8E%E5%B1%8B%E6%B2%BF%E6%B2%B3%E8%B7%AF120%E5%8F%B7104%E5%AE%A4&city=%E4%B8%9C%E8%8E%9E&callnative=1" target="_blank" rel="noopener">高德导航</a>
+        <a class="action" id="mapBaidu" href="https://map.baidu.com/search/?querytype=s&wd=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%B8%9C%E8%8E%9E%E5%B8%82%E6%A1%A5%E5%A4%B4%E9%95%87%E6%9D%8E%E5%B1%8B%E6%B2%BF%E6%B2%B3%E8%B7%AF120%E5%8F%B7104%E5%AE%A4" target="_blank" rel="noopener">百度导航</a>
+        <button class="action full" id="copyAddress" type="button">一键复制完整地址</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section invitation">
+    <div class="section-head reveal">
+      <span class="section-no">03 / INVITATION</span>
+      <h2 class="section-title">诚邀共叙新程</h2>
+    </div>
+    <div class="letter reveal">
+      <p class="salute">敬启者：</p>
+      <p>感谢您一直以来对泓创自动化的关注与支持。公司新厂即将启用，我们谨备薄酌，敬请您莅临答谢晚宴，看一看我们的新产线，也聊一聊碳纤维成型装备与未来生产。</p>
+      <p class="sign">东莞泓创自动化设备有限公司 全体同仁 敬邀<br><small>二〇二六年十一月</small></p>
+    </div>
+    <div class="event-meta reveal">
+      <p class="event-meta-title">温馨提示</p>
+      <details class="note-item" open>
+        <summary>到场与停车</summary>
+        <p>建议提前到场签到，现场将有工作人员引导入席。厂区周边可临时停车，车位有限，建议拼车前往。</p>
+      </details>
+      <details class="note-item">
+        <summary>着装建议</summary>
+        <p>晚宴为商务休闲场合；如需参观厂区，请穿平底鞋，注意脚下安全。</p>
+      </details>
+      <details class="note-item">
+        <summary>关于礼谊</summary>
+        <p>您的到来就是最好的祝福，本次晚宴谢绝花篮与礼金。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section rsvp" id="rsvp">
+    <div class="section-head reveal">
+      <span class="section-no">04 / RSVP</span>
+      <h2 class="section-title">确认出席</h2>
+      <p class="section-desc">填写后复制回执，通过微信发给周家齐先生。</p>
+    </div>
+    <div class="rsvp-card reveal">
+      <p class="choice-title">出席意向</p>
+      <div class="choice-row">
+        <button class="choice active" data-attend="yes" type="button">我会出席</button>
+        <button class="choice" data-attend="no" type="button">暂难出席</button>
+      </div>
+      <div class="form-field">
+        <input class="field" id="guestName" type="text" placeholder="您的姓名" autocomplete="name">
+      </div>
+      <div class="form-field">
+        <p class="choice-title">出席人数</p>
+        <div class="count-row" role="group" aria-label="出席人数">
+          <button class="count-chip active" type="button" data-count="1">1 位</button>
+          <button class="count-chip" type="button" data-count="2">2 位</button>
+          <button class="count-chip" type="button" data-count="3">3 位</button>
+          <button class="count-chip" type="button" data-count="4">4 位</button>
+          <button class="count-chip" type="button" data-count="5">5+</button>
+        </div>
+      </div>
+      <input class="field guest-note" id="guestNote" type="text" placeholder="饮食忌口或其他备注（选填）" style="margin-top:10px">
+      <button class="rsvp-copy" id="copyRsvp" type="button">复制出席回执</button>
+      <p class="rsvp-note">回执仅保存在你的设备中，不会自动发送给主办方。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-slogan">从纤维到成型，从设备到生产。</p>
+    <p class="footer-name">东莞泓创自动化设备有限公司</p>
+    <p class="footer-address">广东省东莞市桥头镇李屋沿河路120号104室 · 周家齐 137 1237 5090</p>
+  </footer>
+</main>
+
+<nav class="dock" id="dock" aria-label="快捷操作">
+  <button type="button" id="dockMap">导航<b>高德地图</b></button>
+  <a href="tel:13712375090" style="display:grid;place-items:center;border-right:1px solid rgba(242,221,167,.15)">致电<b>周家齐先生</b></a>
+  <button type="button" id="dockRsvp">回执<b>填写出席信息</b></button>
+  <button type="button" id="dockShare">分享<b>发送给好友</b></button>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="shareModal" role="dialog" aria-modal="true" aria-label="分享提示">
+  <div class="modal-card">
+    <h2>分享邀请</h2>
+    <p>在微信中打开本页，点击右上角“···”，选择“发送给朋友”或“分享到朋友圈”。<br><br>如无法分享，可复制当前网页链接发送。</p>
+    <button type="button" id="copyShareLink">复制页面链接</button>
+    <button class="secondary" type="button" id="closeShare">关闭</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var DATA={
+    address:'广东省东莞市桥头镇李屋沿河路120号104室',
+    eventDate:new Date(2026,10,13,17,0,0),
+    phone:'13712375090'
+  };
+  var opening=document.getElementById('opening');
+  var body=document.body;
+  var main=document.getElementById('main');
+  var dock=document.getElementById('dock');
+  var toastEl=document.getElementById('toast');
+  var toastTimer=null;
+  var attending='yes';
+  var selectedCount='1';
+  var processSteps=[
+    {no:'01',title:'设备到厂',copy:'结合产品与工艺需求，完成设备配置、交付协同与现场落位，为后续安装调试做好准备。'},
+    {no:'02',title:'安装调试',copy:'技术团队协同完成安装、调试与参数校准，并根据试产情况持续优化，帮助产线顺利进入生产状态。'},
+    {no:'03',title:'生产指导',copy:'围绕操作、维护与稳定生产提供现场指导，让团队更快掌握设备，让每一道工序更可控。'}
+  ];
+
+  function toast(text){
+    toastEl.textContent=text;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toastEl.classList.remove('show')},2400);
+  }
+  function haptic(ms){
+    if(navigator.vibrate&&navigator.userActivation&&navigator.userActivation.isActive){
+      navigator.vibrate(ms||8);
+    }
+  }
+  function burst(origin){
+    var rect=origin.getBoundingClientRect();
+    var colors=['#F5DEA2','#D7B569','#FFF0C7'];
+    for(var i=0;i<12;i++){
+      var spark=document.createElement('i');
+      spark.className='spark';
+      spark.style.left=(rect.left+rect.width/2)+'px';
+      spark.style.top=(rect.top+rect.height/2)+'px';
+      spark.style.background=colors[i%colors.length];
+      spark.style.setProperty('--sx',((Math.random()-.5)*130)+'px');
+      spark.style.setProperty('--sy',((Math.random()-.82)*110)+'px');
+      spark.style.animationDelay=(Math.random()*.12)+'s';
+      document.body.appendChild(spark);
+      setTimeout(function(el){return function(){el.remove()}},850,spark);
+    }
+  }
+  function openInvitation(){
+    if(opening.dataset.opened==='1')return;
+    opening.dataset.opened='1';
+    opening.classList.add('animating');
+    setTimeout(function(){opening.classList.add('leaving')},620);
+    setTimeout(function(){
+      body.classList.add('invite-open');
+      document.querySelectorAll('.hero .reveal').forEach(function(el){el.classList.add('in')});
+      window.scrollTo(0,0);
+    },760);
+    setTimeout(function(){opening.style.display='none'},1450);
+  }
+  function skipOpening(){
+    opening.style.display='none';
+    body.classList.add('invite-open');
+    document.querySelectorAll('.hero .reveal').forEach(function(el){el.classList.add('in')});
+  }
+  function copyText(text,message){
+    if(navigator.clipboard&&window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){toast(message)},function(){fallbackCopy(text,message)});
+    }else{
+      fallbackCopy(text,message);
+    }
+  }
+  function fallbackCopy(text,message){
+    var area=document.createElement('textarea');
+    area.value=text;
+    area.setAttribute('readonly','');
+    area.style.cssText='position:fixed;left:-9999px;top:0';
+    document.body.appendChild(area);
+    area.select();
+    try{document.execCommand('copy')}catch(e){}
+    document.body.removeChild(area);
+    toast(message);
+  }
+  function updateProgress(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=max>0?Math.min(100,window.scrollY/max*100):0;
+    document.getElementById('progressBar').style.width=pct+'%';
+    dock.classList.toggle('show',body.classList.contains('invite-open')&&window.scrollY>window.innerHeight*.65);
+  }
+  function updateCountdown(){
+    var t=document.getElementById('countdown');
+    if(!t)return;
+    var diff=DATA.eventDate.getTime()-Date.now();
+    if(diff<=0){t.innerHTML='<span>晚宴已圆满举行 · 感谢莅临</span>';return;}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor(diff%86400000/3600000);
+    var m=Math.floor(diff%3600000/60000);
+    var s=Math.floor(diff%60000/1000);
+    t.innerHTML='<small>距晚宴开始</small><b>'+d+'</b>天 <b>'+h+'</b>时 <b>'+m+'</b>分 <b>'+s+'</b>秒';
+    t.classList.remove('tick');
+    void t.offsetWidth;
+    t.classList.add('tick');
+  }
+
+  document.getElementById('openInvite').addEventListener('click',function(event){
+    event.stopPropagation();
+    openInvitation();
+  });
+  opening.addEventListener('click',openInvitation);
+  var hero=document.querySelector('.hero');
+  hero.addEventListener('pointermove',function(event){
+    var rect=hero.getBoundingClientRect();
+    hero.style.setProperty('--mx',((event.clientX-rect.left)/rect.width*100)+'%');
+    hero.style.setProperty('--my',((event.clientY-rect.top)/rect.height*100)+'%');
+    hero.classList.add('is-pointing');
+  });
+  hero.addEventListener('pointerleave',function(){hero.classList.remove('is-pointing')});
+  document.getElementById('scrollDetail').addEventListener('click',function(){
+    document.getElementById('craft').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('copyAddress').addEventListener('click',function(){
+    copyText(DATA.address,'地址已复制，可粘贴到地图或微信');
+  });
+  document.getElementById('dockMap').addEventListener('click',function(){
+    window.open(document.getElementById('mapAmap').href,'_blank','noopener');
+  });
+  document.getElementById('dockRsvp').addEventListener('click',function(){
+    document.getElementById('rsvp').scrollIntoView({behavior:'smooth'});
+  });
+  var processDetail=document.getElementById('processDetail');
+  document.querySelectorAll('[data-step]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var step=processSteps[+btn.dataset.step];
+      document.querySelectorAll('[data-step]').forEach(function(item){
+        var active=item===btn;
+        item.classList.toggle('active',active);
+        item.setAttribute('aria-pressed',active?'true':'false');
+      });
+      processDetail.innerHTML='<span class="process-detail-no">'+step.no+'</span><div><strong>'+step.title+'</strong><p>'+step.copy+'</p></div>';
+      processDetail.classList.remove('swap');
+      void processDetail.offsetWidth;
+      processDetail.classList.add('swap');
+      haptic(8);
+    });
+  });
+  document.querySelectorAll('.note-item').forEach(function(item){
+    item.addEventListener('toggle',function(){
+      if(item.open){
+        document.querySelectorAll('.note-item').forEach(function(other){
+          if(other!==item)other.removeAttribute('open');
+        });
+      }
+    });
+  });
+  document.querySelectorAll('[data-attend]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      attending=btn.dataset.attend;
+      document.querySelectorAll('[data-attend]').forEach(function(item){item.classList.toggle('active',item===btn)});
+      document.querySelector('.rsvp-card').classList.toggle('declined',attending==='no');
+      haptic(8);
+    });
+  });
+  document.querySelectorAll('[data-count]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      selectedCount=btn.dataset.count;
+      document.querySelectorAll('[data-count]').forEach(function(item){item.classList.toggle('active',item===btn)});
+      haptic(6);
+    });
+  });
+  document.getElementById('copyRsvp').addEventListener('click',function(){
+    var button=this;
+    var input=document.getElementById('guestName');
+    var name=input.value.trim();
+    if(!name){
+      var card=document.querySelector('.rsvp-card');
+      card.classList.remove('needs-name');
+      void card.offsetWidth;
+      card.classList.add('needs-name');
+      input.focus();
+      toast('请先填写您的姓名');
+      return;
+    }
+    var note=document.getElementById('guestNote').value.trim()||'无';
+    var answer=attending==='yes'?'我会出席':'本次暂难出席';
+    var text=answer==='我会出席'
+      ?'【出席回执】\n姓名：'+name+'\n出席人数：'+selectedCount+' 位\n饮食忌口 / 备注：'+note+'\n— 泓创自动化 11 月 13 日答谢晚宴'
+      :'【回复】\n姓名：'+name+'\n很遗憾本次暂难出席，感谢邀请，预祝活动圆满。';
+    copyText(text,'回执已复制，请发送给周家齐先生');
+    button.classList.add('copied');
+    button.textContent='已复制 · 去微信发送';
+    burst(button);
+    haptic([18,35,18]);
+    setTimeout(function(){
+      button.classList.remove('copied');
+      button.textContent='复制出席回执';
+    },3200);
+  });
+  var shareModal=document.getElementById('shareModal');
+  function showShare(){
+    if(navigator.share){
+      navigator.share({
+        title:'泓创自动化 · 新厂启用答谢晚宴',
+        text:'11月13日17:00，东莞桥头，诚邀拨冗莅临。',
+        url:location.href
+      }).catch(function(){});
+    }else{
+      shareModal.classList.add('show');
+    }
+  }
+  document.getElementById('dockShare').addEventListener('click',showShare);
+  document.getElementById('copyShareLink').addEventListener('click',function(){
+    copyText(location.href,'页面链接已复制，可发送给好友');
+  });
+  document.getElementById('closeShare').addEventListener('click',function(){shareModal.classList.remove('show')});
+  shareModal.addEventListener('click',function(event){if(event.target===shareModal)shareModal.classList.remove('show')});
+
+  if('IntersectionObserver' in window){
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+  }
+
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  setInterval(updateCountdown,1000);
+  updateCountdown();
+  updateProgress();
+
+  if(/[?&]preview=1(?:&|$)/.test(location.search)||location.hash==='#open'){
+    skipOpening();
+  }
+})();
+</script>
+</body>
+</html>
