@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="东莞泓创自动化设备有限公司">
 <meta property="og:title" content="新程启航 · 泓创自动化答谢晚宴">
 <meta property="og:description" content="11月13日17:00，东莞桥头。从纤维到成型，从设备到生产，诚邀共叙新程。">
-<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=6">
+<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=7">
 <meta property="og:image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta itemprop="image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta name="thumbnail" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <link rel="image_src" href="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
-<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=6">
+<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=7">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -274,6 +274,10 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .rsvp-card.declined .count-row,.rsvp-card.declined .guest-note{opacity:.38;pointer-events:none}
 .rsvp-copy{display:flex;align-items:center;justify-content:center;width:100%;height:48px;margin-top:10px;color:#4A060D;background:linear-gradient(135deg,#F6E3AF,#C89A48);font-size:12.5px;font-weight:600;letter-spacing:.12em}
 .rsvp-copy.copied{background:linear-gradient(135deg,#F9ECCA,#DFC085)}
+.rsvp-copy:disabled{cursor:wait;opacity:.66}
+.consent-row{display:flex;align-items:flex-start;gap:8px;margin-top:12px;color:rgba(255,242,213,.54);font-size:10.5px;line-height:1.65;text-align:left}
+.consent-row input{flex:0 0 auto;width:14px;height:14px;margin:2px 0 0;accent-color:var(--gold-2)}
+.rsvp-status{min-height:18px;margin:8px 0 0;text-align:center;font-size:10.5px;line-height:1.6;color:rgba(255,242,213,.56)}
 .rsvp-card.needs-name{animation:nudge .35s ease}
 @keyframes nudge{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-2px)}}
 .spark{position:fixed;z-index:130;width:5px;height:5px;border-radius:50%;pointer-events:none;background:var(--gold-2);box-shadow:0 0 8px rgba(242,221,167,.75);animation:sparkFly .75s ease-out forwards}
@@ -475,7 +479,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
     <div class="section-head reveal">
       <span class="section-no">04 / RSVP</span>
       <h2 class="section-title">确认出席</h2>
-      <p class="section-desc">填写后复制回执，通过微信发给周家齐先生。</p>
+      <p class="section-desc">填写后直接提交，主办方后台将自动汇总席位与人数。</p>
     </div>
     <div class="rsvp-card reveal">
       <p class="choice-title">出席意向</p>
@@ -484,21 +488,16 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
         <button class="choice" data-attend="no" type="button">暂难出席</button>
       </div>
       <div class="form-field">
-        <input class="field" id="guestName" type="text" placeholder="您的姓名" autocomplete="name">
+        <input class="field" id="guestName" type="text" placeholder="您的姓名" autocomplete="name" maxlength="40">
       </div>
       <div class="form-field">
         <p class="choice-title">出席人数</p>
-        <div class="count-row" role="group" aria-label="出席人数">
-          <button class="count-chip active" type="button" data-count="1">1 位</button>
-          <button class="count-chip" type="button" data-count="2">2 位</button>
-          <button class="count-chip" type="button" data-count="3">3 位</button>
-          <button class="count-chip" type="button" data-count="4">4 位</button>
-          <button class="count-chip" type="button" data-count="5">5+</button>
-        </div>
+        <input class="field" id="guestCount" type="number" min="1" max="20" value="1" inputmode="numeric" aria-label="出席人数">
       </div>
-      <input class="field guest-note" id="guestNote" type="text" placeholder="饮食忌口或其他备注（选填）" style="margin-top:10px">
-      <button class="rsvp-copy" id="copyRsvp" type="button">复制出席回执</button>
-      <p class="rsvp-note">回执仅保存在你的设备中，不会自动发送给主办方。</p>
+      <input class="field guest-note" id="guestNote" type="text" placeholder="饮食忌口或其他备注（选填）" maxlength="200" style="margin-top:10px">
+      <label class="consent-row"><input id="guestConsent" type="checkbox"><span>同意将上述信息用于本次晚宴的席位、餐饮与接待安排</span></label>
+      <button class="rsvp-copy" id="submitRsvp" type="button">提交出席回执</button>
+      <p class="rsvp-status" id="rsvpStatus">提交后可在同一设备再次修改，后台仅保留最新回执。</p>
     </div>
   </section>
 
@@ -533,7 +532,8 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
   var DATA={
     address:'广东省东莞市桥头镇李屋沿河路120号104室',
     eventDate:new Date(2026,10,13,17,0,0),
-    phone:'13712375090'
+    phone:'13712375090',
+    rsvpApi:'https://forthcoming-iguana-d3c5t12d21c1f-1503648612.ap-shanghai.app.tcloudbase.com/rsvp-api/api/rsvp'
   };
   var opening=document.getElementById('opening');
   var body=document.body;
@@ -542,7 +542,17 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
   var toastEl=document.getElementById('toast');
   var toastTimer=null;
   var attending='yes';
-  var selectedCount='1';
+
+  function getRsvpClientId(){
+    var storageKey='hc_rsvp_client_id_v1';
+    var clientId='';
+    try{clientId=localStorage.getItem(storageKey)||''}catch(e){}
+    if(!/^[a-zA-Z0-9_-]{12,64}$/.test(clientId)){
+      clientId='rsvp_'+(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,12));
+      try{localStorage.setItem(storageKey,clientId)}catch(e){}
+    }
+    return clientId;
+  }
 
   function toast(text){
     toastEl.textContent=text;
@@ -687,17 +697,11 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
       attending=btn.dataset.attend;
       document.querySelectorAll('[data-attend]').forEach(function(item){item.classList.toggle('active',item===btn)});
       document.querySelector('.rsvp-card').classList.toggle('declined',attending==='no');
+      document.getElementById('guestCount').disabled=attending==='no';
       haptic(8);
     });
   });
-  document.querySelectorAll('[data-count]').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      selectedCount=btn.dataset.count;
-      document.querySelectorAll('[data-count]').forEach(function(item){item.classList.toggle('active',item===btn)});
-      haptic(6);
-    });
-  });
-  document.getElementById('copyRsvp').addEventListener('click',function(){
+  document.getElementById('submitRsvp').addEventListener('click',async function(){
     var button=this;
     var input=document.getElementById('guestName');
     var name=input.value.trim();
@@ -710,20 +714,50 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
       toast('请先填写您的姓名');
       return;
     }
+    if(!document.getElementById('guestConsent').checked){
+      toast('请先同意信息用于活动安排');
+      document.getElementById('guestConsent').focus();
+      return;
+    }
+    var count=Number(document.getElementById('guestCount').value||1);
+    if(attending==='yes'&&(!Number.isInteger(count)||count<1||count>20)){
+      toast('出席人数请填写 1 至 20 人');
+      document.getElementById('guestCount').focus();
+      return;
+    }
     var note=document.getElementById('guestNote').value.trim()||'无';
-    var answer=attending==='yes'?'我会出席':'本次暂难出席';
-    var text=answer==='我会出席'
-      ?'【出席回执】\n姓名：'+name+'\n出席人数：'+selectedCount+' 位\n饮食忌口 / 备注：'+note+'\n— 泓创自动化 11 月 13 日答谢晚宴'
-      :'【回复】\n姓名：'+name+'\n很遗憾本次暂难出席，感谢邀请，预祝活动圆满。';
-    copyText(text,'回执已复制，请发送给周家齐先生');
-    button.classList.add('copied');
-    button.textContent='已复制 · 去微信发送';
-    burst(button);
-    haptic([18,35,18]);
-    setTimeout(function(){
+    button.disabled=true;
+    button.textContent='正在提交…';
+    document.getElementById('rsvpStatus').textContent='正在提交您的回执，请稍候。';
+    try{
+      var response=await fetch(DATA.rsvpApi,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          clientId:getRsvpClientId(),
+          name:name,
+          attending:attending,
+          guestCount:count,
+          note:note==='无'?'':note,
+          consent:true
+        })
+      });
+      var result=await response.json().catch(function(){return {}});
+      if(!response.ok||!result.ok)throw new Error(result.error||'提交失败，请稍后重试');
+      button.classList.add('copied');
+      button.textContent='提交成功 · 可修改后再次提交';
+      document.getElementById('rsvpStatus').textContent=result.updated?'回执已更新，后台统计已同步。':'回执已提交，后台统计已同步。';
+      toast(result.updated?'回执已更新':'回执已提交');
+      burst(button);
+      haptic([18,35,18]);
+    }catch(error){
       button.classList.remove('copied');
-      button.textContent='复制出席回执';
-    },3200);
+      button.textContent='重新提交回执';
+      document.getElementById('rsvpStatus').textContent=error.message||'网络异常，请稍后重试。';
+      toast(error.message||'提交失败，请稍后重试');
+    }finally{
+      button.disabled=false;
+    }
   });
   var shareModal=document.getElementById('shareModal');
   function showShare(){
