@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>泓创晚宴 · 出席统计</title>
+<style>
+  :root{--wine:#6A0912;--wine-dark:#260306;--red:#A81320;--gold:#CAA35B;--paper:#F7EDDD;--ink:#2D2020;--muted:#78655B;--line:rgba(170,126,60,.28);--serif:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;--sans:"PingFang SC","HarmonyOS Sans SC","Noto Sans CJK SC",Arial,sans-serif}
+  *{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(150deg,#17090A,#35070C 48%,#160607);color:var(--ink);font-family:var(--sans)}
+  button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+  .login{min-height:100vh;display:grid;place-items:center;padding:24px}.login-card{width:min(100%,390px);padding:34px 28px 28px;background:var(--paper);box-shadow:0 30px 80px rgba(0,0,0,.42);text-align:center}
+  .seal{width:56px;height:56px;margin:0 auto 20px;display:grid;place-items:center;background:linear-gradient(145deg,#FFF0C4,#C99B49);color:var(--wine);font-family:"Kaiti SC","STKaiti",serif;font-size:18px;font-weight:700;transform:rotate(-3deg)}
+  h1{margin:0;font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:.1em;color:var(--wine)}.sub{margin:8px 0 24px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+  .login input{width:100%;height:46px;padding:0 14px;border:1px solid var(--line);outline:none;background:#FFFDF8}.login input:focus{border-color:var(--gold)}
+  .login button{width:100%;height:46px;margin-top:10px;border:0;color:#FFF0C5;background:linear-gradient(135deg,var(--red),var(--wine-dark));letter-spacing:.14em}.error{min-height:20px;margin:10px 0 0;color:#B11D28;font-size:12px}
+  .app{max-width:1180px;margin:0 auto;padding:30px 24px 70px}.head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;color:#F8E9C3}.head small{display:block;margin-bottom:7px;color:rgba(248,233,195,.52);font-size:10px;letter-spacing:.3em}.head h2{margin:0;font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:.08em}.head-actions{display:flex;gap:8px}
+  .ghost{padding:9px 14px;border:1px solid rgba(242,223,174,.35);color:#F8E9C3;background:rgba(255,255,255,.04);font-size:12px}
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}.metric{padding:20px;background:var(--paper);border-top:3px solid var(--red)}.metric span{display:block;color:var(--muted);font-size:11px;letter-spacing:.12em}.metric strong{display:block;margin-top:9px;font-family:var(--serif);font-size:36px;font-weight:400;color:var(--wine)}.metric em{font-style:normal;font-size:12px;color:var(--muted);margin-left:4px}
+  .toolbar{margin-top:18px;padding:13px 16px;background:rgba(247,237,221,.96);display:flex;align-items:center;gap:10px}.toolbar input{flex:1;height:38px;padding:0 12px;border:1px solid var(--line);background:#fff;outline:none}.toolbar select{height:38px;padding:0 31px 0 11px;border:1px solid var(--line);background:#fff;color:var(--ink)}.toolbar button{height:38px;padding:0 14px;border:1px solid rgba(104,9,18,.24);color:var(--wine);background:#fff;font-size:12px}.updated{margin-left:auto;color:var(--muted);font-size:11px}
+  .table-wrap{margin-top:14px;overflow:auto;background:var(--paper)}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:12.5px}th{background:#EEDCC0;color:#684B38;font-weight:500;letter-spacing:.06em}td.name{font-weight:600;color:var(--wine)}
+  .state{display:inline-flex;padding:3px 8px;font-size:10px;border:1px solid rgba(168,19,32,.25);color:var(--wine);background:rgba(168,19,32,.06)}.state.no{border-color:#b9afa7;color:#76685f;background:#f2efeb}.empty{padding:56px 20px;text-align:center;color:var(--muted);font-size:13px}.note{padding:12px;background:#F1E4CF;border-left:2px solid var(--wine);font-size:11.5px;line-height:1.8;color:#6D5B50}
+  @media(max-width:720px){.app{padding:24px 14px 50px}.head{align-items:flex-start;flex-direction:column}.summary{grid-template-columns:1fr 1fr}.toolbar{flex-wrap:wrap}.toolbar input{flex-basis:100%}.updated{width:100%;margin-left:0}}
+</style>
+</head>
+<body>
+<section class="login" id="loginView">
+  <form class="login-card" id="loginForm">
+    <div class="seal">泓创</div><h1>出席统计后台</h1><p class="sub">新厂启用答谢晚宴 · 2026.11.13</p>
+    <input id="adminKey" type="password" placeholder="请输入管理密码" autocomplete="current-password"><button type="submit">进入统计后台</button><p class="error" id="loginError"></p>
+  </form>
+</section>
+<main class="app hidden" id="appView">
+  <header class="head"><div><small>RSVP OVERVIEW · 2026</small><h2>确认出席汇总</h2></div><div class="head-actions"><button class="ghost" type="button" id="refresh">刷新</button><button class="ghost" type="button" id="logout">退出</button></div></header>
+  <section class="summary">
+    <div class="metric"><span>已确认到场人数</span><strong id="people">0<em>人</em></strong></div>
+    <div class="metric"><span>确认出席回执</span><strong id="parties">0<em>组</em></strong></div>
+    <div class="metric"><span>暂难出席</span><strong id="declined">0<em>组</em></strong></div>
+    <div class="metric"><span>全部回执</span><strong id="total">0<em>条</em></strong></div>
+  </section>
+  <div class="toolbar"><input id="search" type="search" placeholder="搜索姓名或备注"><select id="filter"><option value="all">全部回执</option><option value="yes">仅出席</option><option value="no">仅不出席</option></select><button type="button" id="export">导出 CSV</button><span class="updated" id="updated"></span></div>
+  <div class="table-wrap"><table><thead><tr><th>姓名</th><th>出席状态</th><th>人数</th><th>饮食 / 备注</th><th>最近提交</th></tr></thead><tbody id="rows"></tbody></table><div class="empty hidden" id="empty">暂无回执</div></div>
+  <p class="note">后台数据仅用于本次晚宴席位、餐饮和接待安排。数据库访问受密码保护，请勿公开转发管理链接。</p>
+</main>
+<script>
+(function(){
+  var endpoint='https://forthcoming-iguana-d3c5t12d21c1f-1503648612.ap-shanghai.app.tcloudbase.com/rsvp-api/api/admin/summary';
+  var key='',allRows=[];
+  var loginView=document.getElementById('loginView'),appView=document.getElementById('appView'),loginForm=document.getElementById('loginForm'),adminKey=document.getElementById('adminKey'),loginError=document.getElementById('loginError'),rowsEl=document.getElementById('rows'),emptyEl=document.getElementById('empty'),searchEl=document.getElementById('search'),filterEl=document.getElementById('filter');
+  function esc(value){return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function formatDate(value){if(!value)return '—';var date=new Date(value);return Number.isNaN(date.getTime())?'—':date.toLocaleString('zh-CN',{hour12:false})}
+  function showLogin(message){loginView.classList.remove('hidden');appView.classList.add('hidden');loginError.textContent=message||''}
+  function getStats(rows){var yes=rows.filter(function(r){return r.attending==='yes'});return{people:yes.reduce(function(s,r){return s+Number(r.guestCount||0)},0),parties:yes.length,declined:rows.filter(function(r){return r.attending==='no'}).length,total:rows.length}}
+  function render(){
+    var q=searchEl.value.trim().toLowerCase(),mode=filterEl.value;
+    var rows=allRows.filter(function(row){var text=(row.name+' '+(row.note||'')).toLowerCase();return(mode==='all'||row.attending===mode)&&(!q||text.indexOf(q)>=0)});
+    var stats=getStats(allRows);
+    document.getElementById('people').innerHTML=stats.people+'<em>人</em>';document.getElementById('parties').innerHTML=stats.parties+'<em>组</em>';document.getElementById('declined').innerHTML=stats.declined+'<em>组</em>';document.getElementById('total').innerHTML=stats.total+'<em>条</em>';
+    document.getElementById('updated').textContent='更新于 '+new Date().toLocaleTimeString('zh-CN',{hour12:false});
+    rowsEl.innerHTML=rows.map(function(row){var yes=row.attending==='yes';return '<tr><td class="name">'+esc(row.name)+'</td><td><span class="state '+(yes?'':'no')+'">'+(yes?'确认出席':'暂难出席')+'</span></td><td>'+(yes?Number(row.guestCount||0)+' 人':'—')+'</td><td>'+esc(row.note||'—')+'</td><td>'+esc(formatDate(row.updatedAt||row.createdAt))+'</td></tr>'}).join('');
+    emptyEl.classList.toggle('hidden',rows.length>0);
+  }
+  async function load(){
+    loginError.textContent='';
+    try{
+      var response=await fetch(endpoint,{headers:{Authorization:'Bearer '+key},cache:'no-store'});
+      var result=await response.json().catch(function(){return{}});
+      if(response.status===401){sessionStorage.removeItem('hcAdminKey');showLogin('管理密码不正确');return}
+      if(!response.ok||!result.ok)throw new Error(result.error||'读取失败');
+      allRows=result.rows||[];sessionStorage.setItem('hcAdminKey',key);loginView.classList.add('hidden');appView.classList.remove('hidden');render();
+    }catch(error){showLogin(error.message||'无法连接统计后台')}
+  }
+  loginForm.addEventListener('submit',function(e){e.preventDefault();key=adminKey.value.trim();if(!key){loginError.textContent='请输入管理密码';return}load()});
+  document.getElementById('refresh').addEventListener('click',load);
+  document.getElementById('logout').addEventListener('click',function(){key='';sessionStorage.removeItem('hcAdminKey');adminKey.value='';showLogin('')});
+  searchEl.addEventListener('input',render);filterEl.addEventListener('change',render);
+  document.getElementById('export').addEventListener('click',function(){
+    var csv='\uFEFF姓名,出席状态,人数,饮食/备注,最近提交\n'+allRows.map(function(row){return [row.name,row.attending==='yes'?'确认出席':'暂难出席',row.attending==='yes'?row.guestCount:0,row.note||'',formatDate(row.updatedAt||row.createdAt)].map(function(value){return '"'+String(value).replace(/"/g,'""')+'"'}).join(',')}).join('\n');
+    var blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='泓创自动化-答谢晚宴出席统计.csv';link.click();setTimeout(function(){URL.revokeObjectURL(url)},1000);
+  });
+  key=sessionStorage.getItem('hcAdminKey')||'';if(key)load();else showLogin('');
+})();
+</script>
+</body>
+</html>
