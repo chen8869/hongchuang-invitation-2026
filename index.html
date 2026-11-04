@@ -267,8 +267,14 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .rsvp-note{margin:12px 0 0;font-size:10px;line-height:1.7;color:rgba(255,242,213,.38);text-align:center}
 .footer{padding:38px 28px calc(104px + env(safe-area-inset-bottom));color:rgba(255,242,213,.52);background:#1C0306;text-align:center}
 .footer-slogan{margin:0 0 18px;font-family:var(--serif);font-size:18px;line-height:1.7;letter-spacing:.12em;color:#E9CB8A}
-.footer-name{margin:0 0 6px;font-size:11px;letter-spacing:.12em}
-.footer-address{margin:0;font-size:10px;line-height:1.8}
+.footer-name{margin:0 0 6px;font-size:11px;letter-spacing:.12em;color:rgba(255,242,213,.72)}
+.footer-address{margin:0 0 13px;font-size:10px;line-height:1.8;color:rgba(255,242,213,.62)}
+.footer-phone{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 15px;
+  color:#FFF0C0;border:1px solid rgba(242,221,167,.48);background:rgba(255,242,213,.07);
+  font-size:12px;letter-spacing:.1em;text-decoration:none;
+}
+.footer-phone b{font-family:var(--serif);font-size:14px;font-weight:400;letter-spacing:.05em;color:#F2D38B}
 .dock{
   position:fixed;z-index:45;left:50%;bottom:calc(13px + env(safe-area-inset-bottom));transform:translateX(-50%);
   display:grid;grid-template-columns:repeat(4,1fr);width:min(calc(100% - 30px),560px);
@@ -469,7 +475,8 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
   <footer class="footer">
     <p class="footer-slogan">从纤维到成型，从设备到生产。</p>
     <p class="footer-name">东莞泓创自动化设备有限公司</p>
-    <p class="footer-address">广东省东莞市桥头镇李屋沿河路120号104室 · 周家齐 137 1237 5090</p>
+    <p class="footer-address">广东省东莞市桥头镇李屋沿河路120号104室</p>
+    <a class="footer-phone" href="tel:13712375090">周家齐先生 <b>137 1237 5090</b></a>
   </footer>
 </main>
 
