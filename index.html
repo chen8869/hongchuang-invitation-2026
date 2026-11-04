@@ -270,22 +270,28 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .footer-name{margin:0 0 6px;font-size:11px;letter-spacing:.12em;color:rgba(255,242,213,.72)}
 .footer-address{margin:0 0 13px;font-size:10px;line-height:1.8;color:rgba(255,242,213,.62)}
 .footer-phone{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 15px;
-  color:#FFF0C0;border:1px solid rgba(242,221,167,.48);background:rgba(255,242,213,.07);
-  font-size:12px;letter-spacing:.1em;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;
+  color:#FFF7DF;border:1px solid rgba(242,221,167,.72);background:rgba(242,221,167,.14);
+  font-size:11px;letter-spacing:.1em;text-decoration:none;text-shadow:0 1px 5px rgba(0,0,0,.45);
 }
-.footer-phone b{font-family:var(--serif);font-size:14px;font-weight:400;letter-spacing:.05em;color:#F2D38B}
+.footer-phone b{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.06em;color:#FFE6A8}
+.footer-phone span{font-size:10px;color:rgba(255,242,213,.72)}
 .dock{
   position:fixed;z-index:45;left:50%;bottom:calc(13px + env(safe-area-inset-bottom));transform:translateX(-50%);
   display:grid;grid-template-columns:repeat(4,1fr);width:min(calc(100% - 30px),560px);
-  border:1px solid rgba(242,221,167,.32);background:rgba(32,3,6,.92);
+  border:1px solid rgba(242,221,167,.48);
+  background:linear-gradient(180deg,rgba(72,7,15,.97),rgba(28,3,6,.98));
   box-shadow:0 12px 35px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   opacity:0;pointer-events:none;transition:opacity .3s,transform .3s
 }
 .dock.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.dock button{height:55px;color:rgba(255,242,213,.8);font-size:10.5px;letter-spacing:.1em;border-right:1px solid rgba(242,221,167,.15)}
-.dock button:last-child{border-right:0}
-.dock button b{display:block;margin-top:3px;font-size:9px;font-weight:400;color:var(--gold-2)}
+.dock button,.dock a{height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#FFF0C9;font-size:11.5px;letter-spacing:.1em;border-right:1px solid rgba(242,221,167,.18)}
+.dock button:last-child,.dock a:last-child{border-right:0}
+.dock button:active,.dock a:active{background:rgba(242,221,167,.08)}
+.dock-icon{display:grid;place-items:center;width:17px;height:17px;color:var(--gold-2)}
+.dock-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.dock-label{line-height:1}
+.dock b{display:block;font-size:8.5px;font-weight:400;line-height:1;letter-spacing:.04em;color:rgba(242,211,145,.8)}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .toast{
@@ -476,15 +482,15 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
     <p class="footer-slogan">从纤维到成型，从设备到生产。</p>
     <p class="footer-name">东莞泓创自动化设备有限公司</p>
     <p class="footer-address">广东省东莞市桥头镇李屋沿河路120号104室</p>
-    <a class="footer-phone" href="tel:13712375090">周家齐先生 <b>137 1237 5090</b></a>
+    <a class="footer-phone" href="tel:13712375090"><span>联系电话</span><b>137 1237 5090</b><span>周家齐先生</span></a>
   </footer>
 </main>
 
 <nav class="dock" id="dock" aria-label="快捷操作">
-  <button type="button" id="dockMap">导航<b>高德地图</b></button>
-  <a href="tel:13712375090" style="display:grid;place-items:center;border-right:1px solid rgba(242,221,167,.15)">致电<b>周家齐先生</b></a>
-  <button type="button" id="dockRsvp">回执<b>填写出席信息</b></button>
-  <button type="button" id="dockShare">分享<b>发送给好友</b></button>
+  <button type="button" id="dockMap"><span class="dock-icon"><svg viewBox="0 0 24 24"><path d="m4 6 5-2 6 2 5-2v14l-5 2-6-2-5 2Z"/><path d="M9 4v14M15 6v14"/></svg></span><span class="dock-label">导航</span><b>高德地图</b></button>
+  <a href="tel:13712375090"><span class="dock-icon"><svg viewBox="0 0 24 24"><path d="M8.2 4.5 6 4.8c-1 .2-1.6 1.1-1.4 2.1.8 6.3 5.8 11.3 12.1 12.1 1 .2 1.9-.4 2.1-1.4l.3-2.2-4.1-1.7-1.5 1.6a12.4 12.4 0 0 1-5.2-5.2l1.6-1.5Z"/></svg></span><span class="dock-label">电话</span><b>周家齐先生</b></a>
+  <button type="button" id="dockRsvp"><span class="dock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><path d="m8 9 1.5 1.5L12 8M8 15l1.5 1.5L12 14M14 10h3M14 16h3"/></svg></span><span class="dock-label">回执</span><b>确认出席</b></button>
+  <button type="button" id="dockShare"><span class="dock-icon"><svg viewBox="0 0 24 24"><circle cx="17.5" cy="6" r="2.7"/><circle cx="6.5" cy="12" r="2.7"/><circle cx="17.5" cy="18" r="2.7"/><path d="M9 10.7 15 7.3M9 13.3l6 3.4"/></svg></span><span class="dock-label">分享</span><b>发送给好友</b></button>
 </nav>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
