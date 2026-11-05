@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="东莞泓创自动化设备有限公司">
 <meta property="og:title" content="新程启航 · 泓创自动化答谢晚宴">
 <meta property="og:description" content="11月13日17:00，东莞桥头。从纤维到成型，从设备到生产，诚邀共叙新程。">
-<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=9">
+<meta property="og:url" content="https://chen8869.github.io/hongchuang-invitation-2026/?v=10">
 <meta property="og:image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta itemprop="image" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <meta name="thumbnail" content="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
 <link rel="image_src" href="https://chen8869.github.io/hongchuang-invitation-2026/assets/share-cover.jpg">
-<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=9">
+<link rel="canonical" href="https://chen8869.github.io/hongchuang-invitation-2026/?v=10">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -235,6 +235,7 @@ body.invite-open .main{opacity:1}
 @keyframes tick{50%{color:#FFF8E3;transform:translateY(-2px)}}
 .event-address{position:relative;z-index:1;padding-top:18px;border-top:1px solid rgba(242,221,167,.2);font-size:12.5px;line-height:1.9;color:rgba(255,242,213,.72)}
 .event-address b{display:block;margin-bottom:4px;font-size:9px;font-weight:400;letter-spacing:.28em;color:var(--gold-2)}
+.map-place{display:block;margin-top:6px;color:#FFE7AE;font-size:11.5px;letter-spacing:.03em}
 .actions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:19px}
 .action{display:flex;align-items:center;justify-content:center;gap:7px;min-height:42px;border:1px solid rgba(242,221,167,.32);font-size:11.5px;letter-spacing:.08em;color:#FFF1C9;transition:background .2s,transform .15s}
 .action:active{transform:scale(.98)}
@@ -439,9 +440,10 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
       <div class="event-time">17:00</div>
       <p class="event-name">晚宴开始 · 敬请提前到场</p>
       <div class="countdown" id="countdown" role="timer" aria-live="polite"></div>
-      <div class="event-address"><b>VENUE · 地点</b>广东省东莞市桥头镇李屋沿河路120号104室</div>
+      <div class="event-address"><b>VENUE · 地点</b>广东省东莞市桥头镇李屋沿河路120号104室<span class="map-place">腾讯地图 · 东莞泓创自动化设备有限公司</span></div>
       <div class="actions">
-        <a class="action primary" id="mapAmap" href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%B8%9C%E8%8E%9E%E5%B8%82%E6%A1%A5%E5%A4%B4%E9%95%87%E6%9D%8E%E5%B1%8B%E6%B2%BF%E6%B2%B3%E8%B7%AF120%E5%8F%B7104%E5%AE%A4&city=%E4%B8%9C%E8%8E%9E&callnative=1" target="_blank" rel="noopener">高德导航</a>
+        <a class="action primary full" id="mapTencent" href="https://apis.map.qq.com/uri/v1/search?keyword=%E4%B8%9C%E8%8E%9E%E6%B3%93%E5%88%9B%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%BE%E5%A4%87%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&region=%E4%B8%9C%E8%8E%9E&referer=%E6%B3%93%E5%88%9B%E8%87%AA%E5%8A%A8%E5%8C%96" target="_blank" rel="noopener">打开腾讯地图 · 东莞泓创自动化设备有限公司</a>
+        <a class="action" id="mapAmap" href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%B8%9C%E8%8E%9E%E5%B8%82%E6%A1%A5%E5%A4%B4%E9%95%87%E6%9D%8E%E5%B1%8B%E6%B2%BF%E6%B2%B3%E8%B7%AF120%E5%8F%B7104%E5%AE%A4&city=%E4%B8%9C%E8%8E%9E&callnative=1" target="_blank" rel="noopener">高德导航</a>
         <a class="action" id="mapBaidu" href="https://map.baidu.com/search/?querytype=s&wd=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%B8%9C%E8%8E%9E%E5%B8%82%E6%A1%A5%E5%A4%B4%E9%95%87%E6%9D%8E%E5%B1%8B%E6%B2%BF%E6%B2%B3%E8%B7%AF120%E5%8F%B7104%E5%AE%A4" target="_blank" rel="noopener">百度导航</a>
         <button class="action full" id="copyAddress" type="button">一键复制完整地址</button>
       </div>
@@ -681,7 +683,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
     copyText(DATA.address,'地址已复制，可粘贴到地图或微信');
   });
   document.getElementById('dockMap').addEventListener('click',function(){
-    window.open(document.getElementById('mapAmap').href,'_blank','noopener');
+    window.open(document.getElementById('mapTencent').href,'_blank','noopener');
   });
   document.getElementById('dockRsvp').addEventListener('click',function(){
     document.getElementById('rsvp').scrollIntoView({behavior:'smooth'});
